@@ -1,0 +1,147 @@
+@keyframes wave{
+    0%{
+        transform: translateY(-25px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-25px);
+    }
+}
+@keyframes mok{
+    0%{
+        transform: translateY(-15px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(-15px);
+    }
+}
+
+
+
+.element::-webkit-scrollbar { width: 0 !important }
+html{
+    height: 100%;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul,ol{
+    list-style: none;
+}
+body{
+    height: 100%;
+}
+.wiper{
+    height: 100%;
+    overflow: hidden;
+}
+.wiper img{
+    transition: all 1s;
+}
+.control{
+    position: fixed;
+    float: left;
+    top: 0;
+    left: 0;
+}
+.control>ul{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+}
+.control>ul>li{
+    border: 1.5px dashed white;
+    margin: 1px;
+    line-height: 19px;
+    width: 23px;
+    text-align: center;
+    color: white;
+    position: relative;
+    /* background-color: white; */
+    /* background-size: 11px 13px; */
+    /* background-repeat:no-repeat; */
+}
+.control>ul>li::after{
+    display: none;
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 13px;
+    color: white;
+    border: 6px solid white;
+    left: 3px;
+    top: 4px;
+}
+.control>ul>li.show::after{
+    display: block;
+}
+.control>nav{
+    position: fixed;
+}
+.control>nav .right{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: all 1s;
+}
+.control>nav .righ:hover{
+    color: rgba(255, 255, 255, 0.623)
+}
+.control>nav .left{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: all 1s;
+}
+.control>nav .left:hover{
+    color: rgba(255, 255, 255, 0.623)
+}
+.loading{
+    position: fixed;
+    top: 0;
+    
+}
+.back{
+    height: 100vh;
+    width: 100vw;
+    background: rgb(16, 16, 16);
+    position: fixed;
+    /* display: none; */
+}
+.cloud{
+    background-image: url("./assets/images/cloud.png");
+    position: fixed;
+    background-size: cover;
+    height: 500px;
+    width: 800px;
+    left: 50%;
+    top: 50%;
+    margin-left:-400px ;
+    margin-top: -250px;
+    position: fixed;
+    animation-name: wave;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
+.monk{
+    left: 50%;
+    top: 50%;
+    margin-left:-53px ;
+    margin-top: -75px;
+    position: fixed;
+    animation-name: mok;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
